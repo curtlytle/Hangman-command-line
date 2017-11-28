@@ -1,0 +1,7 @@
+{
+  "name": "Hangman-cmd-line",
+  "version": "0.0.1",
+  "dependencies": {
+    "inquirer": "^4.0.0"
+  }
+}
