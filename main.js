@@ -1,5 +1,8 @@
 // dependency for inquirer npm package
 var inquirer = require("inquirer");
+var Word = require("./word");
+
+var gameWord = new Word("Baseball");
 
 inquirer.prompt([
     {
@@ -8,4 +11,6 @@ inquirer.prompt([
     }
 ]).then(function (answer) {
     console.log(answer);
+    gameWord.checkGuess(answer.letter);
+    gameWord.displayWord();
 });

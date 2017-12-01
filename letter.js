@@ -1,6 +1,19 @@
-function Letter (letter, correct) {
+function Letter (letter) {
     this.letter = letter;
-    this.correct = correct;
+    this.guessed = false;
 }
+Letter.prototype.getLetter = function () {
+    if (this.guessed) {
+        return this.letter;
+    } else {
+        return " _ ";
+    }
+};
+Letter.prototype.guessLetter = function (letterGuess) {
+    if (this.letter === letterGuess) {
+        this.guessed = true;
+    }
+    return this.guessed;
+};
 
 module.exports = Letter;
