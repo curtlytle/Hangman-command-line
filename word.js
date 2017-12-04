@@ -8,15 +8,16 @@ function Word(word) {
         this.letters.push(letter);
     }
 }
+
 Word.prototype.checkGuess = function (guess) {
-   for (var i = 0; i < this.letters.length; i++) {
-       var letter = this.letters[i];
-       if (letter.guessLetter(guess)) {
-           return true;
-       }
-   }
-   return false;
+    var correctGuess = false;
+    for (var i = 0; i < this.letters.length; i++) {
+        var letter = this.letters[i];
+        correctGuess = letter.guessLetter(guess);
+    }
+    return correctGuess;
 };
+
 Word.prototype.displayWord = function () {
     var display = "";
     for (var i = 0; i < this.letters.length; i++) {

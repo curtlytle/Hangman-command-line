@@ -6,7 +6,7 @@ Letter.prototype.getLetter = function () {
     if (this.guessed) {
         return this.letter;
     } else {
-        return " _ ";
+        return "_ ";
     }
 };
 Letter.prototype.guessLetter = function (letterGuess) {
