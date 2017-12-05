@@ -19,14 +19,17 @@ function promptForGuess() {
         letter = answer.letter;
         var goodGuess = gameWord.checkGuess(letter);
         if (!goodGuess) {
-            console.log("Incorrect, " + (chances - badGuesses) + " chances left.");
+            console.log("Incorrect, " + (chances - badGuesses - 1) + " chances left.");
             badGuesses++;
+
             if (badGuesses >= chances) {
                 console.log("Game over, you lost.");
             } else {
                 gameWord.displayWord();
                 promptForGuess();
             }
+        } else if (gameWord.isWordGuessed()) {
+            console.log("You WIN!  Word guessed was: " + gameWord.word);
         } else {
             gameWord.displayWord();
             promptForGuess();
