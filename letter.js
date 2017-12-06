@@ -12,8 +12,10 @@ Letter.prototype.getLetter = function () {
 Letter.prototype.guessLetter = function (letterGuess) {
     if (this.letter === letterGuess) {
         this.guessed = true;
+        return true;
+    } else {
+        return false;
     }
-    return this.guessed;
 };
 
 module.exports = Letter;
